@@ -31,7 +31,7 @@ module "dns_acm" {
 
 module "s3_website"{
   source                                    = "./modules/s3-website"
-  website_bucket_name                       = var.bucket_name
+  website_bucket_name                       = var.website_bucket_name
   force_destroy                             = var.force_destroy
   versioing_enabled                         = var.versioing_enabled
   index_document                            = var.index_document

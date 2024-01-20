@@ -1,8 +1,8 @@
-output "iam_user_name" {
-  description = "User arn"
-  value = module.backend.iam_user_arn
+# output "iam_user_name" {
+#   description = "User arn"
+#   value = module.backend.iam_user_arn
 
-}
+# }
 
 output "s3_bucket_id" {
     description = "The ID of S3 Bucket"
