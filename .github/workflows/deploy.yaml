@@ -15,7 +15,7 @@ env:
 jobs:
   terraform:
     name: Deployment Infrasctructure
-    runs-on: ubuntu-lates
+    runs-on: ubuntu-latest
 
 
     defaults:
