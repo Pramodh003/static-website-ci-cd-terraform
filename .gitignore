@@ -1,5 +1,5 @@
 .terraform
 terraform.tfstate
 terraform.rc
-*.tfvars
-*.tfvars.json
+#*.tfvars
+#*.tfvars.json
