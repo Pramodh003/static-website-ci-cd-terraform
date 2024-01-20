@@ -1,49 +1,41 @@
-name: Trigger CI/CD pipeline using tf scripts
+name: Deploy Website
 
 on:
   push:
     branches:
       - main
 
-
-
 jobs:
   terraform:
-    name: Deployment Infrasctructure
+    name: Deploy Infrastructure
     runs-on: ubuntu-latest
 
     env:
-      ACCESS_KEY: ${{ secrets.ACCESS_KEY }}
-      SECRET_KEY: ${{ secrets.SECRET_KEY }}
-      REGION: ${{ secrets.REGION }}
-      IAM_USER_NAME: ${{ secrets.IAM_USER_NAME }}
-      BUCKET_NAME: ${{ secrets.BUCKET_NAME }}
-      TABLE_NAME: ${{ secrets.TABLE_NAME }}
-      
+      AWS_ACCESS_KEY_ID: ${{ secrets.ACCESS_KEY }}
+      AWS_SECRET_ACCESS_KEY: ${{ secrets.SECRET_KEY }}
+
     defaults:
       run:
         working-directory: ./terraform
 
     steps:
-      - name: Checkout to repository
+      - name: Checkout Repo
         uses: actions/checkout@v2
 
-      - name: Terraform setup
+      - name: Terraform Setup
         uses: hashicorp/setup-terraform@v1
 
-      - name: Terraform format
+      - name: Terraform Format
         run: terraform fmt
 
-      - name: Terraform initate
+      - name: Terraform Init
         run: terraform init
 
-      - name: Terraform validate
+      - name: Terraform Validate
         run: terraform validate
 
-      - name: Terraform plan
+      - name: Terraform Plan
         run: terraform plan
 
-      - name: Terraform apply 
-        run: terraform apply -auto-apporve
-      
-    
+      - name: Terraform Apply
+        run: terraform apply -auto-approve
