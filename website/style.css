@@ -1,0 +1,109 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap');
+
+/*
+To remove the default padding by using universal selectore
+*/
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+.Portfolio-container{
+    min-height: 100vh;
+    width: 100%;
+    display: flex; 
+}
+
+/*
+converting the home buttons to row wise
+*/
+
+.navlist {
+    display: flex; /*converting the home buttons to row wise*/
+    gap: 3.5rem; /*To provide space between buttons*/
+    height: 15vh;
+    width: 100%;
+    justify-content: center; /*It will make horizontally center*/
+    align-items: center; /*It will make vertically center*/
+    position: fixed;
+}
+
+/*
+to remove bullets which you got from li we use navlis to remove it
+*/
+
+.navlist li{
+    list-style: none;
+}
+
+/*
+to remove underline which you got from li we use navlis to remove it from anchor which you created
+*/
+
+.navlist li a{
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 1rem;
+    color: white;
+}
+
+/*
+to declare both common heights for both the containers
+*/
+.left-container,.right-container{
+    height: 100vh;
+    display: flex;
+    align-items: center;
+}
+.left-container {
+    background: #262525;
+    width: 70%;
+    padding-left: 3rem;
+}
+
+.right-container {
+    background: #3877FF;
+    width: 30%;
+}
+
+.icons , .fa-brands{
+    color: white;
+    font-size: 1.7rem;
+
+}
+.icons{
+    flex-direction: column;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 3rem;
+}
+
+.content{
+    margin-left: 4rem;
+
+}
+
+.content ,.intro{
+    font-size: 1.5rem;
+    color: white;
+}
+
+.content h1{
+    font-size: 4rem;
+    color: #5db9ee;
+}
+
+.content , .intro span{
+    color: #5db9ee;
+    font-size: rem;
+}
+.content p{
+    font-size: 1.1rem;
+    color: white;
+    max-width: 38rem;  /*It will reduce the width of paragraph*/
+    margin: 1.1rem 0 3rem 0;
+}
