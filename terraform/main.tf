@@ -12,13 +12,14 @@ provider "aws" {
   region                                = var.region
 }
 
-# module "backend" {
-#   source                                = "./modules/remote-backend"
-#   iam_user_name                         = var.iam_user_name
-#   bucket_name                           = var.bucket_name
-#   table_name                            = var.table_name
-# }
-
+terraform {
+  backend "s3" {
+    bucket         = "tf-s3bucket-portfolio-tfstate-1"
+    key            = "website/s3.tfstate"
+    region         = "us-east-1"
+    
+  }
+}
 
 
 
