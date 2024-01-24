@@ -54,7 +54,7 @@ jobs:
 
         env:
           AWS_ACCESS_KEY_ID: ${{ secrets.ACCESS_KEY }}
-          AWS_SECRET_ACCESS_KEY: ${{ secrets.ACCESS_KEY }}
+          AWS_SECRET_ACCESS_KEY: ${{ secrets.SECRET_KEY }}
           AWS_S3_BUCKET: "pramodh-portfolio"
           AWS_REGION: "us-east-1"
           SOURCE_DIR: "./website"
