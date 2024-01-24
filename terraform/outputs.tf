@@ -18,3 +18,8 @@ output "website_url" {
     description = "website url"
     value = module.s3_website.website_url
 }
+
+output "cloudfront_distribution_id" {
+    description = "The ID of CloudFront distribution"
+    value = module.cloudfront.cloudfront_distribution_id
+}

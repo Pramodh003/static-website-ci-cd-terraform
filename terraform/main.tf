@@ -39,3 +39,13 @@ module "s3_website"{
   region                                    = var.region
 
 }
+
+module "cloudfront"{
+  source                                    = "./modules/s3-cloudfront"
+  bucket_regional_domain_name               = module.s3_website.bucket_regional_domain_name
+  s3_bucket_id                              = module.s3_website.s3_bucket_id
+  index_document                            = module.s3_website.index_document
+  root_domain                               = module.dns_acm.root_domain
+  ssl_cert_arn                              = module.dns_acm.ssl_cert_arn
+  route53_zone_id                           = module.dns_acm.route53_zone_id
+}
