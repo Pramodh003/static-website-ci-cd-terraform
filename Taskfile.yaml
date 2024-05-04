@@ -1,0 +1,24 @@
+version: '3'
+
+tasks:
+  scripts:
+    desc: Calling all the stages
+    aliases:
+      - all
+    cmds:
+      - task: Check-into-folder
+      
+  Check-into-folder:
+    desc: Change directory to terraform folder
+    dir: terraform
+    cmds:
+      -  echo "Intializing the terraform"
+      -  terraform init
+      # -  echo "Validate Terraform configuration"
+      # -  terraform validate
+      # -  echo "Apply the changes required to reach the desired state"
+      # -  terraform plan
+      # -  echo "Apply the changes required to reach the desired state"
+      # -  terraform apply -auto-approve
+      -  echo "Intializing the terraform"
+      -  terraform destroy -auto-approve
